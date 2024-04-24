@@ -1,0 +1,265 @@
+/* ----------Note Note Note ----------- */
+
+/* All the content inside this css file are copy right protectes under creative commons license 2024 NoteX Studios Inc. */
+
+/* Use of this content for commercial purpose will lead to the violation of this license  */
+
+/* CC-2024 NoteX Studios All Rights Preserved */
+
+/* Developed and finalized by Dev.SC */
+
+/*google fornts repo directory sc*/
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* initalization to zero sc */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Jost', sans-serif;
+  transition: .4s ease-in-out;
+  scroll-behavior: smooth;
+  text-decoration: none;
+}
+
+/* color for span tag element sc */
+span.colour-text{
+  color: var(--cl);
+}
+
+/* root elements colour decleration sc */
+:root{
+  --bg: #fff;
+  --navBar: rgba(255, 255, 255, .1);
+  --fontClr: #212121;
+  --specialText: #56bcd5;
+}
+
+/* changing text to capital for special items in page sc */
+
+a,
+::placeholder {
+   text-transform: capitalize;
+   color: var(--specialText)
+}
+
+body.body-home-page{
+  background: var(--bg);
+}
+
+/* header initial properties sc  */
+header{
+  width: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .2), rgba(255, 255, 255, 0) );
+  position: fixed;
+  height: 4.75rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: Poppins;
+  color: var(--specialText);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 .2rem #333333b0 ;
+  padding: 0px 2%;
+}
+
+header::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4),transparent);
+  transition: .5s;
+}
+
+header:hover::before{
+  left: 100%;
+}
+
+header nav.navbar {
+  display: flex;
+  width: 96%;
+  position: relative;
+  height:100%;
+  align-items: center;
+  justify-content: center;
+}
+
+img.header-logo-img{
+  height:3.25rem;
+  margin-top:10px;
+}
+
+.navbar ul.navbar-list{
+  display: flex;
+  list-style: none;
+  right:0;
+}
+
+ul.navbar-list .navbar-list-item{
+  text-decoration: none;
+  width: 4.5rem;
+  text-align: center;
+}
+
+
+/* ul.navbar-list .navbar-list-anchor:is(:link, :active, :visited){
+  text-decoration: none;
+} */
+
+/* a:is(:link, :active, :visited).active{
+  background-color: #212121;
+} */
+
+.navbar div.navbar-special{
+  position: absolute;
+  display: flex;
+  right: 0px;
+  align-items: center;
+  background-color: var(--specialText);
+  border-radius: 30px;
+}
+
+.navbar div.navbar-special:hover{
+  background-color: var(--specialText);
+  color: var(--fontClr);
+  border-radius: 30px;
+  box-shadow: 0 0 1rem var(--specialText);
+  transition: 900ms ease;
+
+}
+
+.navbar div.navbar-special a{
+  color: #fff;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.navbar div.navbar-special a:hover{
+  color: #333;  
+  transition: 900ms ease;
+}
+
+header div.navabar-hamburger-menu {
+  font-size: 45px;
+  color: var(--cl);
+  padding: 15px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1101;
+  display: none;
+}
+
+
+
+header .navbar ul a{
+  position: relative;
+  max-width: max-content;
+
+} 
+
+
+header .navbar ul a:hover{
+  color: var(--specialText);
+}
+
+header .navbar ul a::after{
+
+  color: var(--specialText);
+  content: '';
+  position: absolute;
+  left: 0; 
+  bottom: -2px;
+  width: 100%;
+  height: .2rem;
+  border-block: .123rem solid var(--specialText);
+  transform: scaleX(0.2);
+  opacity: 0;
+  transition: 900ms ease;
+}
+
+header .navbar ul a:is(:hover, :focus-visible)::after{
+  color: var(--specialText);
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+
+
+/* making nav bar responsive sc */
+
+@media (max-width: 1090px){
+
+  header{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header div.navabar-hamburger-menu{
+    display:block;
+    right: 0px;
+    top:20px;
+    z-index: 1001;
+  }
+
+  header nav.navbar {
+    display: none;
+    width: 100%;
+    position: fixed;
+    height: 100dvh;
+    top:0;
+    top:4.75rem;
+    left: 0px;
+    z-index: 1001;
+    background: #868383f3;
+    border-bottom: 2px solid rgba(255, 255, 255, .2);
+    flex-direction: column;
+    transition: .3s all ease-in-out;
+    padding-top: 50px;
+  }
+
+
+  header nav#navbar.active{
+    display: flex;
+  }
+
+  header .navbar .navbar-list{
+    display: block;
+  }
+
+  header .navbar .navbar-list .navbar-list-item{ 
+    height: 3rem;
+  }
+
+  .navbar div.navbar-special{
+    position: static;
+    display: flexbox;
+  }
+
+}
+
+/* test section */
+/* no need to copy */
+
+main div.main-div{
+  z-index: 0;
+  height:95vh;
+  width: 100%;
+  background-image: url(/img/bg.jpg);
+  opacity: 80%;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  text-align: center;
+  
+}
